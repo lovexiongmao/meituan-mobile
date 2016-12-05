@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<!--为网站设置icon图标用于显示在浏览器标签页最左侧-->
+		<!--<link rel="icon" href="http://ms0.meituan.net/touch/img/icon/favicon.ico" type="image/x-icon">-->
+		<link rel="icon" href="img/lily.png" type="image/x-icon">
+		<link rel="stylesheet" href="iconfont/iconfont.css" />
+        <link rel="stylesheet" href="css/swiper.css" />
+		<link rel="stylesheet" href="css/myPop.css" />
+		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		
+		<style>
+			html {
+				font-size: 100px;
+				/*设置字体大小,rem单位是相对这里的100px；*/
+			}
+			
+			body {
+				margin: 0;
+				color: #666666;
+				font-size: .14rem;
+				font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+				line-height: 1em;
+				background-color: #f0efed;
+			}
+			
+			a {
+				text-decoration: none;
+				color: black;
+			}
+			
+			ul {
+				padding: 0;
+				margin: 0;
+				list-style-type: none;
+			}
+			
+			@media screen and (max-width: 320px) {
+				body {
+					width: 320px;
+				}
+			}
+			/*-----header start-----*/
+			
+			.header {
+				position: relative;
+				height: .5rem;
+				background: #06c1ae;
+				border-bottom: 1px solid #21897d;
+			}
+			
+			.header-left,
+			.header-seach,
+			.header-right {
+				position: absolute;
+			}
+			
+			.header-left {
+				top: 0;
+				left: 0;
+				width: .7rem;
+				height: 100%;
+			}
+			
+			.city {
+				width: .47rem;
+				height: 100%;
+				margin: 0 auto;
+				vertical-align: middle;
+				font-size: .17rem;
+				color: white;
+				line-height: .5rem;
+			}
+			
+			.icon-arrow-b {
+				display: inline-block;
+				width: .1rem;
+				height: 100%;
+			}
+			
+			.icon-arrow-b:after {
+				content: "V";
+				color: white;
+				font-size: .1rem;
+				line-height: .5rem;
+				font-weight: 100;
+				/*background: white;*/
+			}
+			
+			.header-seach {
+				left: .7rem;
+				right: .5rem;
+				height: .32rem;
+				margin-top: .1rem;
+			}
+			
+			.header-seach a {
+				position: relative;
+				display: block;
+				height: 100%;
+			}
+			
+			.header-seach .search-box {
+				display: block;
+				height: 100%;
+				padding-left: .32rem;
+				border-radius: .06rem;
+				background: rgba(0, 0, 0, .15);
+			}
+			
+			.icon-search {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: .32rem;
+				height: 100%;
+				line-height: .32rem;
+			}
+			
+			.search-box {
+				line-height: .32rem;
+				font-size: .13rem;
+				color: #68dbce;
+			}
+			
+			.header-right {
+				top: 0;
+				right: 0;
+				width: .5rem;
+				height: 100%;
+				text-align: center;
+				font-size: .12rem;
+			}
+			
+			.header-right a {
+				display: block;
+				height: 100%;
+				color: white;
+			}
+			
+			.header-right .icon-my {
+				display: block;
+				height: .3rem;
+				line-height: .3rem;
+				font-size: .25rem;
+			}
+			/*-----header end-----*/
+			/*-----banner start-----*/
+			
+			.banner {
+				height: .5rem;
+			}
+			
+			.banner a {
+				display: block;
+				height: 100%;
+			}
+			
+			.banner a img {
+				display: block;
+				width: 3.2rem;
+				height: .5rem;
+				margin: 0 auto;
+			}
+			/*-----banner end-----*/
+			/*-----nav start-----*/
+			
+			.nav {
+				/*position: relative;*/
+				height: 1.8rem;
+				border-bottom: 1px solid rgb(220, 216, 206);
+				background-color: white;
+				/*overflow-x: hidden;*/
+			}
+			
+			.nav .icon-list {
+				height: 100%;
+			}
+			
+			.nav .icon {
+				float: left;
+				height: .8rem;
+				width: 20%;
+			}
+			
+			.nav .icon a {
+				display: block;
+				box-sizing: border-box;
+				height: .8rem;
+				padding: .2rem 0;
+			}
+			
+			.icon-circle {
+				display: block;
+				margin: auto;
+				margin-bottom: .07rem;
+				width: .4rem;
+				height: .4rem;
+				border-radius: 50%;
+				line-height: .4rem;
+				font-size: .25rem !important;
+				color: #fff;
+				background-color: #fd9d21;
+			}
+			
+			.icon-desc {
+				display: block;
+				font-size: .12rem;
+				text-align: center;
+			}
+			/*-----nav end-----*/
+			/*-----daogou start-----*/
+			
+			#daogou {
+				height: 1.5rem;
+				padding: .06rem;
+				border: solid rgb(220, 216, 206);
+				border-width: .01rem 0;
+				margin: .1rem 0;
+				background-color: white;
+			}
+			
+			#daogou .left,
+			#daogou .top,
+			#daogou .bottom-left,
+			#daogou .bottom-right {
+				float: left;
+				box-sizing: border-box;
+				width: 33.3%;
+				height: 50%;
+			}
+			
+			#daogou .left {
+				height: 100%;
+				border-right: 1px solid rgb(220, 216, 206);
+			}
+			
+			#daogou .top {
+				width: 66.6%;
+			}
+			
+			#daogou .text {
+				width: .85rem;
+				margin: 0 auto;
+				text-align: left;
+			}
+			
+			#daogou .text .strong {
+				font-size: .15rem;
+				margin: .12rem 0;
+			}
+			
+			#daogou .text .small {
+				font-size: .10rem;
+			}
+			
+			.green {
+				color: #55a40f;
+			}
+			
+			#daogou .left img {
+				display: block;
+				width: .85rem;
+				height: .94rem;
+				margin: 0 auto;
+			}
+			
+			#daogou .bottom-left,
+			#daogou .bottom-right {
+				border-top: 1px solid rgb(220, 216, 206);
+			}
+			
+			#daogou .bottom-left {
+				border-right: 1px solid rgb(220, 216, 206);
+			}
+			
+			#daogou .top .text {
+				float: left;
+				display: inline-block;
+				box-sizing: border-box;
+				width: 50%;
+				padding-right: .1rem;
+				text-align: right;
+			}
+			
+			.red {
+				color: #ff3f0d;
+			}
+			
+			#daogou .top img {
+				float: left;
+				width: .85rem;
+				height: .65rem;
+			}
+			
+			#daogou .bottom-left .strong,
+			#daogou .bottom-right .strong {
+				margin: .06rem 0;
+			}
+			
+			#daogou .bottom-left img {
+				display: block;
+				width: .4rem;
+				height: .4rem;
+				margin: 0 auto;
+			}
+			
+			.pink {
+				color: #f742a0;
+			}
+			
+			.time-panel {
+				margin-top: .1rem;
+				font-size: .13rem;
+				line-height: .15rem;
+			}
+			
+			.time-hour,
+			.time-min,
+			.time-sec {
+				display: inline-block;
+				width: .2rem;
+				height: .15rem;
+				border-radius: .03rem;
+				color: white;
+				text-align: center;
+				background-color: black;
+			}
+			
+			.orange {
+				color: #ff8601;
+			}
+			/*-----daogou end-----*/
+			/*----商铺列表 start----*/
+			
+			.cainixihuan {
+				background-color: white;
+			}
+			
+			.cainixihuan-title {
+				height: .4rem;
+				padding-left: .1rem;
+				border-top: 1px solid rgb(220, 216, 206);
+				border-left: 3px solid #06c1ae;
+				font-size: .16rem;
+				color: #666;
+				line-height: .4rem;
+			}
+			
+			.detailList a {
+				position: relative;
+				display: block;
+				height: 1rem;
+				border-bottom: 1px solid rgb(220, 216, 206);
+			}
+			
+			.detailList li:first-child {
+				border-top: 1px solid rgb(220, 216, 206);
+			}
+			
+			.detailList-img,
+			.detailList-brand,
+			.detailList-info,
+			.detailList-price,
+			.detailList-sold {
+				position: absolute;
+				left: 1.1rem;
+			}
+			
+			.detailList-img {
+				top: .1rem;
+				left: .1rem;
+				height: .8rem;
+				width: .9rem;
+			}
+			
+			.detailList-brand {
+				top: .12rem;
+				margin: 0;
+				font-size: 0.15rem;
+				font-weight: 400;
+				letter-spacing: .5px;
+			}
+			
+			.detailList-info {
+				top: .35rem;
+				padding-right: .1rem;
+				font-size: 0.12rem;
+				color: dimgray;
+			}
+			
+			.detailList-price {
+				bottom: .1rem;
+				color: #06c1ae;
+			}
+			
+			.strong {
+				font-weight: bolder;
+				font-size: 0.18rem;
+			}
+			
+			.detailList-price .menshijia {
+				color: black;
+				font-size: 0.12rem;
+			}
+			
+			.detailList-sold {
+				bottom: .1rem;
+				left: auto;
+				right: .1rem;
+				font-size: 0.12rem;
+			}
+			
+			.detailList .youhui {
+				position: relative;
+				top: -.01rem;
+				display: inline-block;
+				padding: 0 .03rem;
+				border: .01rem solid #f90;
+				border-radius: .03rem;
+				color: #f90;
+				line-height: .18rem;
+				font-size: .11rem;
+			}
+			/*----商铺列表中的免预约标签 start----*/
+			
+			.detailList-nobooking {
+				position: absolute;
+				top: .1rem;
+				left: .1rem;
+				overflow: hidden;
+				width: .5rem;
+				height: .5rem;
+				z-index: 1;
+			}
+			
+			.detailList-nobooking:after {
+				content: "免预约";
+				position: absolute;
+				top: .09rem;
+				left: -.18rem;
+				height: .16rem;
+				width: .71rem;
+				color: white;
+				font-size: .12rem;
+				line-height: .16rem;
+				text-align: center;
+				background-color: #06c1ae;
+				-moz-transform: rotateZ(-45deg);
+				-webkit-transform: rotateZ(-45deg);
+				transform: rotateZ(-45deg);
+			}
+			/*----商铺列表中的免预约标签 end----*/
+			/*----商铺列表 end----*/
+			/*----footer start----*/
+			
+			footer {
+				box-sizing: border-box;
+				height: 1.53rem;
+				margin-top: .15rem;
+				padding: 0 .1rem .2rem;
+			}
+			
+			footer a {
+				color: #06c1ae;
+			}
+			
+			.footer-bar {
+				margin-bottom: .2rem;
+			}
+			
+			.pull-right {
+				float: right;
+			}
+			
+			.btn {
+				display: inline-block;
+				box-sizing: border-box;
+				padding: 8px 15px;
+				border: 1px solid #06c1ae;
+				border-radius: 3px;
+				color: #06c1ae;
+			}
+			
+			.btn-broad {
+				width: 90px;
+				text-align: center;
+			}
+			
+			.footer-nav {
+				margin-bottom: .09rem;
+			}
+			
+			.footer-nav ul {
+				height: .1rem;
+				padding: .09rem;
+				line-height: .1rem;
+			}
+			
+			.footer-nav li {
+				float: left;
+				box-sizing: border-box;
+				width: 20%;
+				border-right: 1px solid black;
+			}
+			
+			.footer-nav li:last-child {
+				border-right-width: 0;
+			}
+			
+			.footer-nav li > a {
+				display: inline-block;
+				width: 100%;
+				font-size: .1rem;
+				text-align: center;
+			}
+			
+			.footer-links {
+				margin: .15rem .1rem;
+				font-size: .1rem;
+				text-align: center;
+			}
+			
+			.footer-copyright {
+				position: relative;
+				font-size: .1rem;
+				text-align: center;
+				color: darkgray;
+			}
+			
+			.footer-copyright a {
+				color: darkgray;
+			}
+			/*横线*/
+			
+			.footer-copyright .hr {
+				position: absolute;
+				top: 50%;
+				width: 100%;	
+				border-top: .01rem solid #999;
+			}
+			
+			.footer-copyright-text {
+				/*把.hr线挡住*/
+				position: relative;
+				padding: 0 .15rem;
+				background-color: #f0efed;
+			}
+			/*---- footer end-----*/
+		</style>
+        <script type="text/javascript" src="artTemplate.js"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			$(function(){
+				var strres = '['
+				$(".icon").each(function(i,info){
+					strres += '{';
+					strres += '"href":"'+$(info).find("a").attr("href")+'",';
+					strres += '"background":"'+$(info).find(".icon-circle").css("background")+'",';
+					strres += '"icon":"'+$(info).find(".icon-circle").text()+'",';
+					strres += '"title":"'+$(info).find(".icon-desc").text()+'",';	
+					strres += '},'
+				})
+				strres += ']';
+				console.log(strres);
+			})	
+		</script>
+		<div class="header">
+			<div class="header-left">
+				<a href="#">
+					<div class="city">
+						深圳
+						<span class="icon-arrow-b"></span>
+					</div>
+				</a>
+			</div>
+			<div class="header-seach">
+				<a href="#">
+					<span class="icon-search iconfont">&#xe605;</span>
+					<span class="search-box">输入商家/品类/商圈</span>
+				</a>
+			</div>
+			<div class="header-right">
+				<a href="#">
+					<span class="icon-my iconfont">&#xe602;</span> 我的
+				</a>
+			</div>
+		</div>
+		<!--/header-->
+
+		<div class="banner">
+			<a href="http://i.meituan.com/client/wapbn?subchannel=i_banner_index&landingpage=1">
+				<img src="http://p1.meituan.net/mmc/dbc70b32f22415bc55d1523d7141735c18365.jpg" />
+			</a>
+		</div>
+		<!--/banner-->
+
+		<div class="nav swiper-container ">
+			<div class="swiper-wrapper">
+				<ul class="swiper-slide icon-list">
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=1&amp;cateType=poi">
+							<span class="icon-circle iconfont" style="background: #fd9d21">&#xe60b;</span>
+							<span class="icon-desc">美食</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=99&amp;cateType=poi">
+							<span class="icon-circle iconfont" style="background: #ff6767">&#xe60a;</span>
+							<span class="icon-desc">电影</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="/hotel/">
+							<span class="icon-circle iconfont" style="background: #8a90fa">eef&#xe601;</span>
+							<span class="icon-desc">酒店</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=2&amp;cateType=poi">
+							<span class="icon-circle iconfont xiuxianyule" style="background: #fed030">&#xe614;</span>
+							<span class="icon-desc">休闲娱乐</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.waimai.meituan.com/mti/home?cityId=30">
+							<span class="icon-circle iconfont xiuxianyule" style="background: #fd9d21">&#xe610;</span>
+							<span class="icon-desc">外卖</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=10&amp;cateType=poi">
+							<span class="icon-circle iconfont ktv" style="background: #fed030">&#xe60d;</span>
+							<span class="icon-desc">KTV</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/trip/lvyou/triplist/poi/">
+							<span class="icon-circle iconfont zhoubianyou" style="background: #4dc6ee">&#xe60c;</span>
+							<span class="icon-desc">周边游</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="/catehome/22">
+							<span class="icon-circle iconfont liren" style="background: #ff80c2">&#xe603;</span>
+							<span class="icon-desc">丽人</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=36&amp;cateType=poi">
+							<span class="icon-circle iconfont xiaochikuaican" style="background: #fd9d21">&#xe615;</span>
+							<span class="icon-desc">小吃快餐</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/trip/train/search/?train_source=meituan@wap">
+							<i class="icon-circle iconfont" style="background: #599eec">&#xe612;</i>
+							<span class="icon-desc">火车票</span></a>
+					</li>
+				</ul>
+
+				<ul class="swiper-slide icon-list">
+					<li class="icon">
+						<a style="display:block" href="/catehome/3">
+							<i class="icon-circle iconfont" style="background: #A8DD99">&#xe600;</i>
+							<span class="icon-desc">生活服务</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=0&amp;cateType=deal">
+							<span class="icon-circle iconfont jinrixindan" style="background: #00d3be">&#xe611;</span>
+							<span class="icon-desc">今日新单</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=78&amp;cateType=deal">
+							<span class="icon-circle iconfont lvyou" style="background: #4dc6ee">&#xe613;</span>
+							<span class="icon-desc">旅游</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=52&amp;cateType=poi">
+							<span class="icon-circle iconfont zuliao" style="background: #fed030">&#xe60e;</span>
+							<span class="icon-desc">足疗按摩</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=11&amp;cateType=poi">
+							<span class="icon-circle iconfont icecream" style="background: #fd9d21">&#xe606;</span>
+							<span class="icon-desc">甜点饮品</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=396&amp;cateType=poi">
+							<i class="icon-circle iconfont" style="background: #FF7360">&#xe604;</i>
+							<span class="icon-desc">婚纱摄影</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="/catehome/20007">
+							<i class="icon-circle iconfont" style="background: #ff80c2">&#xe608;</i>
+							<span class="icon-desc">母婴亲子</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=20285&amp;cateType=poi">
+							<i class="icon-circle iconfont" style="background: #84d23d">&#xe609;</i>
+							<span class="icon-desc">学习培训</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/shenzhen?cid=20178&amp;cateType=poi">
+							<i class="icon-circle iconfont">&#xe607;</i>
+							<span class="icon-desc">结婚</span></a>
+					</li>
+					<li class="icon">
+						<a style="display:block" href="http://i.meituan.com/category?city=shenzhen">
+							<span class="icon-circle iconfont quanbu" style="background: #00d3be">&#xe60f;</span>
+							<span class="icon-desc">全部分类</span></a>
+					</li>
+				</ul>
+
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+		<script type="text/javascript" src="js/swiper.jquery.js" ></script>
+		<!-- Initialize Swiper -->
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				paginationClickable: true
+			});
+		</script>
+		<div id="daogou">
+			<div class="left">
+				<a href="#">
+					<div class="text">
+						<div class="strong green">我们约吧</div>
+						<div class="small">恋人家人好朋友</div>
+					</div>
+					<img src="http://p0.meituan.net/mmc/fe4d2e89827aa829e12e2557ded363a112289.png">
+				</a>
+			</div>
+			<div class="top">
+				<a href="#">
+					<span class="text">
+							<div class="strong red">低价超值</div>
+							<div class="small">十元惠生活</div>
+						</span>
+					<img src="http://p0.meituan.net/mmc/a06d0c5c0a972e784345b2d648b034ec9710.jpg">
+				</a>
+			</div>
+			<div class="bottom-left">
+				<a href="#">
+					<div class="text">
+						<div class="strong pink">工作简餐</div>
+						<div class="small">实惠方便选择多</div>
+					</div>
+					<img src="http://p1.meituan.net/mmc/726b30f162d1ea39a5077af83cec620811475.png">
+				</a>
+			</div>
+			<div class="bottom-right">
+				<a href="#">
+					<div class="text">
+						<div class="strong orange">名店抢购</div>
+						<div class="small">距离结束</div>
+						<div class="time-panel">
+							<span class="span-time time-hour"></span>:<span class="span-time time-min"></span>:<span class="span-time time-sec"></span>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!--daogou end-->
+		<script>
+			//	名店抢购结束时间
+			var finishTime = new Date("2016-08-25 21:00:00");
+
+			/**
+			 * 设置抢购时间倒计时
+			 * 根据抢购结束时间计算
+			 */
+			function qianggoushijian() {
+				var now = new Date();
+				var secends = (finishTime - now) / 1000;
+				var hours = parseInt(secends / (3600));
+				hours = timePanelTool(hours);
+				var minutes = parseInt(secends % (3600) / (60));
+				minutes = timePanelTool(minutes);
+				var seconds = parseInt(Math.round(secends % (3600) % (60)));
+				seconds = timePanelTool(seconds);
+				$(".time-panel").children(":eq(0)").text(hours).next()
+					.text(minutes).next()
+					.text(seconds);
+			}
+
+			function timePanelTool(data) {
+				var t = data.toString();
+				return t.length == 1 ? "0" + t : t;
+			}
+
+			setInterval(qianggoushijian, 1000);
+		</script>
+		<div id="cainixihuan" class="cainixihuan">
+			<div class="cainixihuan-title">猜你喜欢</div>
+		</div>
+		<!--/cainixihuan-->
+		<!--商铺列表模板-->
+		<script id="detailList" type="text/html">
+			<li>
+				<a href="#">
+					<img class="detailList-img" src="{{img}}" />
+					<h3 class="detailList-brand">{{brand}}</h3>
+					<div class="detailList-info">{{info}}</div>
+					<div class="detailList-price">
+						<span><span class="strong">{{price}}</span>元</span>
+					</div>
+					<div class="detailList-sold">{{sold}}</div>
+				</a>
+			</li>
+		</script>
+		<!--请求商铺列表的数据,渲染到模板中,将返回的HTML插入页面-->
+		<script>
+			$.ajax({
+				url: "json/DetailList.json",
+				method: "get",
+				"dataType": "json",
+				success: function(datas) {
+					var $ul = $("<ul class='detailList'></ul>");
+					$.each(datas, function(i, data) {
+						var $li = $(template("detailList", data)).appendTo($ul);
+						var $elem;
+						// 门市价和优惠的处理
+						if (data.menshi_price != "") {
+							$elem = $('<span class="menshijia">门市价:' + data.menshi_price + '</span>');
+						} else {
+							$elem = $('<span class="youhui">' + data.youhui + '</span>');
+						}
+						$li.find('.detailList-price').append($elem);
+						//	判断商铺是否免预约，免预约则将<span/>插入
+						if (data.nobooking) {
+							$('<span class="detailList-nobooking"></span>').appendTo($li.children("a"));
+						}
+					});
+					$ul.appendTo(".cainixihuan");
+				}
+			});
+		</script>
+		<footer>
+			<div class="footer-bar">
+				<a href="https://i.meituan.com/account/login" class="btn">登录</a> &nbsp;
+				<a href="http://i.meituan.com/account/signup" class="btn">注册</a>
+				<div class="pull-right">
+					<span>城市:</span> &nbsp;
+					<a href="http://i.meituan.com/index/changecity/" class="btn btn-broad">深圳</a>
+				</div>
+			</div>
+			<div class="footer-nav">
+				<ul>
+					<li><a href="http://i.meituan.com/">首页</a>
+					</li>
+					<li><a rel="nofollow" href="http://i.meituan.com/orders/all">订单</a>
+					</li>
+					<li><a>客户端</a>
+					</li>
+					<li><a href="http://www.meituan.com?pcstyle=1">电脑版</a>
+					</li>
+					<li><a href="http://i.meituan.com/help/">帮助</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer-links">友情链接：
+				<a target="_blank" href="http://m.maoyan.com/?channel=touch_group">猫眼电影</a>
+			</div>
+			<div class="footer-copyright">
+				<div class="hr"></div>
+				<span class="footer-copyright-text">©2016 美团网 <a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证070791号</a></span>
+			</div>
+		</footer>
+		<!--footer end-->
+		<script type="text/javascript" src="js/myPop.js" ></script>
+		<script>
+			var $topBtn = lx_pop.createTopBtn();
+			$topBtn.css("display", "none").appendTo("body");
+			var isTopBtnShow = false;
+			window.onscroll = function() {
+				var t = document.documentElement.scrollTop || document.body.scrollTop;
+//				console.log(t);
+				if (t >= 1200 && !isTopBtnShow) {
+					$topBtn.css("display", "block");
+					isTopBtnShow = true;
+				} else if(t < 1200 && isTopBtnShow) {
+					$topBtn.css("display", "none");
+					isTopBtnShow = false;
+				}
+			}
+		</script>
+	</body>
+
+</html>

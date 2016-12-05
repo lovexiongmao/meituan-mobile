@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>美团商家页面</title>
+		<link rel="stylesheet" href="iconfont/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>	
+		<link rel="stylesheet" type="text/css" href="css/business.css"/>
+		<script src="js/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/artTemplate.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header class="header">
+			<a href="business.html"><button id="btn1">全部商家</button></a>
+			<a href="business.html"><button>优惠商家</button></a>
+			<a href="#" class="headertopicon1"><i class="iconfont grey">&#xe601;</i></a>
+			<a href="#" class="headertopicon2"><i class="iconfont grey">&#xe606;</i></a>
+		</header>
+		<!--/header-->
+		
+		<nav class="nav white">
+			<button>全部分类<img src="img/xjt.png" /></button>
+			<button>全城<img src="img/xjt.png" /></button>
+			<button>智能排序<img src="img/xjt.png" /></button>
+		</nav>
+		<!--/nav-->
+		
+		<div class="addrtag">
+			深圳宝安区蚝业雅苑写字楼
+			<i class="iconfont grey">&#xe605;</i>
+		</div>
+		<!--/addrtag-->
+		
+		<div class="goodsList">
+			<div class="cnxhtitle">猜你喜欢</div>
+			<ul>
+				<!--<li>
+					<a herf="#" class="cnxhbox">
+						<div class="imgbox">
+							<div class="isyuyue">免预约</div>
+							<img src="http://p0.meituan.net/100.0/deal/e5d21470df5ef34f92b77d83dd16c771153749.jpg@0_7_368_368a%7C267h_267w_2e_90Q"/>
+						</div>
+						<div class="goodsList_name">麦当劳</div>
+						<div class="goodsList_addr">[深圳等]天妇罗鸡腿堡1份</div>
+						<div class="infobox">
+							<span class="price">9</span>
+							<span class="danwei">元</span>-->
+							<!--门市价:<span class="menshijia">20元</span>-->
+							<!--<span class="newuser">新用户立减15元</span>
+						</div>
+						<span class="sellnumb">已售25143</span>
+					</a>
+				</li>-->
+			</ul>
+			<a href="javascript:;" class="more">
+				<span class="showall">查看全部团购</span>
+				<span class="jiantou">
+					〉
+				</span>	
+			</a>
+			
+			<script id="cnxhTemplet" type="text/html">
+				<li>
+					<a herf="#" class="cnxhbox">
+						<div class="imgbox"><img src="{{data_src}}"/></div>
+						<div class="goodsList_name">{{name}}</div>
+						<div class="goodsList_addr">{{addr}}</div>
+						<div class="infobox">
+							<span class="price">{{price_strong}}</span>
+							<span class="danwei">元</span>
+						</div>
+						<span class="sellnumb">{{sell_numb}}</span>
+					</a>
+				</li>
+			</script>
+			<!--/猜你喜欢模板-->
+			
+			<script type="text/javascript">
+				$.ajax({
+					url: "json/cainixihuan.json",
+					"dataType": "json",
+					method: "get",
+					success: function(data){
+						$.each(data,function (i,value) {
+							var $li = $(template("cnxhTemplet",value));
+							if(value.price_menshijia == ""){
+								$('<span class="newuser">' + value.price_tag + '</span>').appendTo($li.children(".cnxhbox").children(".infobox"));
+							}else {
+								$('<span class="menshijia">门市价:' + value.price_menshijia + '</span>').appendTo($li.children(".cnxhbox").children(".infobox"));
+							}
+							if(value.yuyue == "ture"){
+								$('<div class="isyuyue">免预约</div>').appendTo($li.children(".cnxhbox").children(".imgbox"));
+							}
+							$(".goodsList ul").append($li);
+						})		
+					}
+				})
+			</script>
+		</div>
+		<!--/goodsList-->
+		
+		<div class="block">
+			<ul class="block-left">
+				<a href="business.html"><li><i class="iconfont grey mg">&#xe613;</i><span class="fcolor qingse">全部分类</span></li></a>
+				<a href="business.html"><li><i class="iconfont grey mg">&#xe60b;</i><span class="fcolor">电影</span></li></a>
+				<li><i class="iconfont grey mg">&#xe619;</i><span class="fcolor">美食</span><span class="jt">></span></li>
+				<a href="business.html"><li><i class="iconfont grey mg">&#xe625;</i><span class="fcolor">摄影写真</span></li></a>
+				<li><i class="iconfont grey mg">&#xe614;</i><span class="fcolor">酒店</span><span class="jt">></span></li>
+				<li><i class="iconfont grey mg">&#xe615;</i><span class="fcolor">休闲娱乐</span><span class="jt">></span></li>
+				<a href="business.html"><li><i class="iconfont grey mg">&#xe61a;</i><span class="fcolor">汽车服务</span></li></a>
+				<li><i class="iconfont grey mg">&#xe618;</i><span class="fcolor">生活服务</span><span class="jt">></span></li>
+				<li><i class="iconfont grey mg">&#xe61f;</i><span class="fcolor">丽人</span><span class="jt">></span></li>
+				<li><i class="iconfont grey mg">&#xe60d;</i><span class="fcolor">旅游</span><span class="jt">></span></li>
+			</ul>
+			
+			<ul class="block-right-">
+				
+			</ul>
+	        <ul class="block-right-a">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>火锅</span></li></a>
+				<a href="business.html"><li><span>自助餐</span></li></a>
+				<a href="business.html"><li><span>西餐</span></li></a>
+				<a href="business.html"><li><span>日本料理</span></li></a>
+				<a href="business.html"><li><span>蛋糕甜点</span></li></a>
+				<a href="business.html"><li><span>烧烤烤鱼</span></li></a>
+				<a href="business.html"><li><span>川湘菜</span></li></a>
+				<a href="business.html"><li><span>江浙菜</span></li></a>
+				<a href="business.html"><li><span>粤菜</span></li></a>
+				<a href="business.html"><li><span>西北/东北菜</span></li></a>
+				<a href="business.html"><li><span>京菜/鲁菜</span></li></a>
+				<a href="business.html"><li><span>云贵菜</span></li></a>
+				<a href="business.html"><li><span>素食</span></li></a>
+				<a href="business.html"><li><span>东南亚菜</span></li></a>
+				<a href="business.html"><li><span>台湾菜</span></li></a>
+				<a href="business.html"><li><span>海鲜</span></li></a>
+				<a href="business.html"><li><span>小吃快餐</span></li></a>
+				<a href="business.html"><li><span>特色菜</span></li></a>
+				<a href="business.html"><li><span>汤/粥/炖菜</span></li></a>
+				<a href="business.html"><li><span>蒙菜</span></li></a>
+				<a href="business.html"><li><span>新疆菜</span></li></a>
+				<a href="business.html"><li><span>其他美食</span></li></a>
+			</ul>	
+			<ul class="block-right-b">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>经济型酒店</span></li></a>
+				<a href="business.html"><li><span>豪华酒店</span></li></a>
+				<a href="business.html"><li><span>青年旅社</span></li></a>
+				<a href="business.html"><li><span>客栈</span></li></a>
+				<a href="business.html"><li><span>主题酒店</span></li></a>
+				<a href="business.html"><li><span>公寓型酒店</span></li></a>
+				<a href="business.html"><li><span>度假酒店/度假村</span></li></a>
+			</ul>
+			<ul class="block-right-c">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>KTV</span></li></a>
+				<a href="business.html"><li><span>足疗按摩</span></li></a>
+				<a href="business.html"><li><span>运动健身</span></li></a>
+				<a href="business.html"><li><span>桌游/电玩</span></li></a>
+				<a href="business.html"><li><span>密室逃脱</span></li></a>
+				<a href="business.html"><li><span>咖啡酒吧</span></li></a>
+				<a href="business.html"><li><span>演出赛事</span></li></a>
+				<a href="business.html"><li><span>DIY手工</span></li></a>
+				<a href="business.html"><li><span>真人CS</span></li></a>
+				<a href="business.html"><li><span>4D/5D电影</span></li></a>
+				<a href="business.html"><li><span>其他娱乐</span></li></a>
+			</ul>
+			<ul class="block-right-d">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>母婴亲子</span></li></a>
+				<a href="business.html"><li><span>体检保健</span></li></a>
+				<a href="business.html"><li><span>照片冲印</span></li></a>
+				<a href="business.html"><li><span>培训课程</span></li></a>
+				<a href="business.html"><li><span>鲜花婚庆</span></li></a>
+				<a href="business.html"><li><span>配镜</span></li></a>
+				<a href="business.html"><li><span>其他生活</span></li></a>
+			</ul>
+			<ul class="block-right-e">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>美发</span></li></a>
+				<a href="business.html"><li><span>美甲</span></li></a>
+				<a href="business.html"><li><span>美容SPA</span></li></a>
+				<a href="business.html"><li><span>瑜伽/舞蹈</span></li></a>
+			</ul>
+			<ul class="block-right-f">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>本地/周边游</span></li></a>
+				<a href="business.html"><li><span>景点门票</span></li></a>		
+			</ul>			
+			
+			<ul class="block-left">
+				<li><span class="fcolor qingse">附近</span><span class="jt">></span></li>
+				<li><span class="fcolor">推荐商圈</span><span class="jt">></span></li>
+				<a href="business.html"><li><span class="fcolor">光明新区</span></li></a>
+				<li><span class="fcolor">罗湖区</span><span class="jt">></span></li>
+				<li><span class="fcolor">福田区</span><span class="jt">></span></li>
+				<li><span class="fcolor">南山区</span><span class="jt">></span></li>
+				<li><span class="fcolor">宝安区</span><span class="jt">></span></li>
+				<li><span class="fcolor">龙岗区</span><span class="jt">></span></li>
+				<li><span class="fcolor">南澳大鹏新区</span><span class="jt">></span></li>
+				<li><span class="fcolor">龙华新区</span><span class="jt">></span></li>
+			</ul>
+			
+			<ul class="block-righta-">
+				
+			</ul>
+			<ul class="block-righta-a">
+				<a href="business.html"><li><span>1千米</span></li></a>
+				<a href="business.html"><li><span>3千米</span></li></a>
+				<a href="business.html"><li><span>5千米</span></li></a>		
+				<a href="business.html"><li><span>10千米</span></li></a>		
+				<a href="business.html"><li><span>全城</span></li></a>		
+			</ul>
+			<ul class="block-righta-b">
+				<a href="business.html"><li><span>宝安中心区</span></li></a>
+				<a href="business.html"><li><span>新安</span></li></a>
+				<a href="business.html"><li><span>东门</span></li></a>		
+				<a href="business.html"><li><span>龙华</span></li></a>		
+				<a href="business.html"><li><span>罗岗/求水山</span></li></a>	
+				<a href="business.html"><li><span>龙岗中心城</span></li></a>
+				<a href="business.html"><li><span>国贸</span></li></a>
+				<a href="business.html"><li><span>华侨城</span></li></a>
+				<a href="business.html"><li><span>民治</span></li></a>
+				<a href="business.html"><li><span>华强北</span></li></a>
+				<a href="business.html"><li><span>南山中心区</span></li></a>
+				<a href="business.html"><li><span>西乡</span></li></a>
+				<a href="business.html"><li><span>南头</span></li></a>
+				<a href="business.html"><li><span>港隆城</span></li></a>
+				<a href="business.html"><li><span>皇岗</span></li></a>
+				<a href="business.html"><li><span>下沙</span></li></a>
+				<a href="business.html"><li><span>前海</span></li></a>
+				<a href="business.html"><li><span>蛇口</span></li></a>
+				<a href="business.html"><li><span>梅林</span></li></a>
+			</ul>
+			<ul class="block-righta-c">
+				<a href="business.html"><li><span>全部</span></li></a>		
+				<a href="business.html"><li><span>东门</span></li></a>		
+				<a href="business.html"><li><span>罗湖区政府</span></li></a>		
+				<a href="business.html"><li><span>翠竹路沿线</span></li></a>		
+				<a href="business.html"><li><span>宝安南路沿线</span></li></a>		
+				<a href="business.html"><li><span>地王大厦</span></li></a>		
+				<a href="business.html"><li><span>KK mall</span></li></a>		
+				<a href="business.html"><li><span>田贝</span></li></a>		
+				<a href="business.html"><li><span>新秀</span></li></a>		
+			</ul>
+			<ul class="block-righta-d">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>华强北</span></li></a>
+				<a href="business.html"><li><span>CBD中心区</span></li></a>		
+				<a href="business.html"><li><span>皇岗</span></li></a>		
+				<a href="business.html"><li><span>上沙</span></li></a>		
+				<a href="business.html"><li><span>园岭</span></li></a>		
+				<a href="business.html"><li><span>香蜜湖</span></li></a>		
+				<a href="business.html"><li><span>景田</span></li></a>		
+				<a href="business.html"><li><span>车公庙</span></li></a>		
+				<a href="business.html"><li><span>竹子林</span></li></a>		
+				<a href="business.html"><li><span>市民中心</span></li></a>		
+			</ul>
+			<ul class="block-righta-e">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>东部华侨城</span></li></a>
+				<a href="business.html"><li><span>壹海城</span></li></a>		
+				<a href="business.html"><li><span>盐田</span></li></a>		
+				<a href="business.html"><li><span>大小梅沙</span></li></a>		
+				<a href="business.html"><li><span>沙头角</span></li></a>		
+			</ul>
+			<ul class="block-righta-f">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>南头</span></li></a>
+				<a href="business.html"><li><span>保利</span></li></a>		
+				<a href="business.html"><li><span>西丽</span></li></a>		
+				<a href="business.html"><li><span>前海/海岸城</span></li></a>	
+				<a href="business.html"><li><span>太古城</span></li></a>
+				<a href="business.html"><li><span>花园城</span></li></a>
+				<a href="business.html"><li><span>世界之窗</span></li></a>
+			</ul>
+			<ul class="block-righta-g">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>沙井</span></li></a>		
+				<a href="business.html"><li><span>福永</span></li></a>		
+				<a href="business.html"><li><span>罗田/燕川</span></li></a>		
+				<a href="business.html"><li><span>西乡</span></li></a>		
+				<a href="business.html"><li><span>圳美</span></li></a>		
+				<a href="business.html"><li><span>塘尾</span></li></a>		
+				<a href="business.html"><li><span>桃源居</span></li></a>		
+			</ul>
+			<ul class="block-righta-h">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>龙岗中心城</span></li></a>
+				<a href="business.html"><li><span>五和/民营市场</span></li></a>		
+				<a href="business.html"><li><span>南联</span></li></a>		
+				<a href="business.html"><li><span>横岗</span></li></a>		
+				<a href="business.html"><li><span>坪地</span></li></a>		
+				<a href="business.html"><li><span>天虹/坂田/杨美</span></li></a>		
+				<a href="business.html"><li><span>万科广场/世贸</span></li></a>		
+				<a href="business.html"><li><span>李朗巨星商城</span></li></a>		
+				<a href="business.html"><li><span>岗头/万科/雪象</span></li></a>		
+				<a href="business.html"><li><span>大运</span></li></a>		
+			</ul>			
+			<ul class="block-righta-i">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>龙华</span></li></a>
+				<a href="business.html"><li><span>民治</span></li></a>		
+				<a href="business.html"><li><span>梅林关</span></li></a>		
+				<a href="business.html"><li><span>景秀江南</span></li></a>		
+				<a href="business.html"><li><span>大浪</span></li></a>		
+				<a href="business.html"><li><span>观澜</span></li></a>			
+			</ul>
+			<ul class="block-righta-j">
+				<a href="business.html"><li><span>全部</span></li></a>
+				<a href="business.html"><li><span>坪山</span></li></a>
+				<a href="business.html"><li><span>坑欣/竹坑</span></li></a>
+			</ul>
+			
+			<ul class="block-left">
+				<a href="business.html"><li><span class="fcolor qingse">智能排序</span></li></a>
+				<a href="business.html"><li><span class="fcolor">好评优先</span></li></a>
+				<a href="business.html"><li><span class="fcolor">离我最近</span></li></a>
+				<a href="business.html"><li><span class="fcolor">人均最低</span></li></a>
+			</ul>
+		</div>
+		<!--/navBlock-->
+		
+		<footer class="footer">
+			<div class="footertopbox">
+				<div class="footertopboxleft">
+					<a href="javascript:;" class="login">
+						登录
+					</a>
+					<a href="javascript:;" class="register">
+						注册
+					</a>
+				</div>
+				<div class="footertopboxright">
+					<span class="nowcity">
+						城市:
+					</span>
+					<a href="javascript:;" class="register">
+						深圳
+					</a>
+				</div>	
+			</div>
+			<div class="footermiddlebox">
+				<span class="bottomnav">首页</span>
+				<span class="bottomnav">订单</span>
+				<span class="bottomnav">客户端</span>
+				<span class="bottomnav">电脑版</span>
+				<span class="bottomnav">帮助</span>
+			</div>
+			<div class="footerbottombox">
+				<div class="friendlylink">
+					<span>
+						友情链接:
+					</span>
+					<span class="friendlylinkname">
+						猫眼电影
+					</span>
+				</div>
+				<div class="copyright">
+					<hr />
+					<span class="copyrightinfo">
+						©2016 美团网 
+						<a href="javascript:;">京ICP证070791号</a>
+					</span>
+				</div>
+				<div class="banquan">开熊版权所有,侵权必究！</div>
+			</div>
+		</footer>
+		<!--/footer-->
+		
+		<div class="bottomnavbar">
+			<ul class="navbar">
+				<a href="index.html"><li><i class="icon iconfont">&#xe61e;</i>首页</li></a>
+				<a href="javascript:;"><li><i class="icon iconfont">&#xe616;</i>商家</li></a>
+				<a href="my.html"><li><i class="icon iconfont">&#xe608;</i>我的</li></a>
+				<a href="more.html"><li><i class="icon iconfont">&#xe60c;</i>更多</li></a>
+			</ul>
+		</div>
+		
+		<script src="js/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/business.js" type="text/javascript" charset="utf-8"></script>
+		
+	</body>
+</html>

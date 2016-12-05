@@ -1,0 +1,122 @@
+[
+{
+"href": "http://i.meituan.com/shenzhen?cid=1&cateType=poi",
+"background": "rgb(253, 157, 33) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "美食"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=99&cateType=poi",
+"background": "rgb(255, 103, 103) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "电影"
+},
+{
+"href": "/hotel/",
+"background": "rgb(138, 144, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "酒店"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=2&cateType=poi",
+"background": "rgb(254, 208, 48) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "休闲娱乐"
+},
+{
+"href": "http://i.waimai.meituan.com/mti/home?cityId=30",
+"background": "rgb(253, 157, 33) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "外卖"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=10&cateType=poi",
+"background": "rgb(254, 208, 48) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "KTV"
+},
+{
+"href": "http://i.meituan.com/trip/lvyou/triplist/poi/",
+"background": "rgb(77, 198, 238) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "周边游"
+},
+{
+"href": "/catehome/22",
+"background": "rgb(255, 128, 194) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "丽人"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=36&cateType=poi",
+"background": "rgb(253, 157, 33) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "小吃快餐"
+},
+{
+"href": "http://i.meituan.com/trip/train/search/?train_source=meituan@wap",
+"background": "rgb(89, 158, 236) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "火车票"
+},
+{
+"href": "/catehome/3",
+"background": "rgb(168, 221, 153) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "生活服务"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=0&cateType=deal",
+"background": "rgb(0, 211, 190) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "今日新单"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=78&cateType=deal",
+"background": "rgb(77, 198, 238) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "旅游"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=52&cateType=poi",
+"background": "rgb(254, 208, 48) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "足疗按摩"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=11&cateType=poi",
+"background": "rgb(253, 157, 33) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "甜点饮品"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=396&cateType=poi",
+"background": "rgb(255, 115, 96) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "婚纱摄影"
+},
+{
+"href": "/catehome/20007",
+"background": "rgb(255, 128, 194) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "母婴亲子"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=20285&cateType=poi",
+"background": "rgb(132, 210, 61) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "学习培训"
+},
+{
+"href": "http://i.meituan.com/shenzhen?cid=20178&cateType=poi",
+"background": "rgb(253, 157, 33) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "结婚"
+},
+{
+"href": "http://i.meituan.com/category?city=shenzhen",
+"background": "rgb(0, 211, 190) none repeat scroll 0% 0% / auto padding-box border-box",
+"icon": "",
+"title": "全部分类"
+}
+]

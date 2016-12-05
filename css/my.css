@@ -1,0 +1,362 @@
+body {
+	background-color: #F0F0F0;
+}
+
+/****header****/
+.header {
+	font-size: .17rem;
+	width: 100%;
+	height: .4rem;
+	border-bottom: 1px solid lightgray;
+	line-height: .4rem;
+	padding-left: .15rem;
+	position: fixed;
+	font-weight: 600;
+	color: grey;
+	z-index: 100;
+	top: 0;
+	background-color: #f9f9f9;
+}
+
+.header .icona {
+	color: grey;
+	font-size: .24rem;
+	position: absolute;
+	right: .7rem;
+	font-weight: normal;
+	line-height: .4rem;
+}
+
+.header .iconb {
+	color: grey;
+	font-size: .24rem;
+	position: absolute;
+	right: .28rem;
+	font-weight: normal;
+	line-height: .4rem;
+}
+
+.header .iconb img {
+	position: absolute;
+	bottom: .23rem;
+	right: .03rem;
+}
+
+
+/****banner****/
+.banner {
+	font-size: 0;
+	margin-top: .4rem;
+	background-color: #13C4B4;
+	height: 1.04rem;
+	text-align: center;
+	position: relative;
+}
+
+.bigcircle {
+	width: .5rem;
+	height: .5rem;
+	border-radius: 50%;
+	background-color: #6FE7DE;
+	padding-top: .05rem;
+	box-sizing: border-box;
+	position: absolute;
+	top: .27rem;
+	left: .1rem;
+}
+
+.smallcircle {
+	width: .4rem;
+	height: .4rem;
+	border-radius: 50%;
+	background-color: red;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+.smallcircle img {
+	width: .4rem;
+	height: .4rem;
+	border-radius: 50%;
+}
+
+.banner .username {
+	position: absolute;
+	color: #EEFFFF;
+	font-size: .18rem;
+	font-weight: 600;
+	top: .43rem;
+	left: .7rem;
+}
+
+.banner .vip{
+	display: block;
+	width: .18rem;
+	height: .18rem;
+	background-color: #FFE403;
+	border-radius: .03rem;
+	position: absolute;
+	color: #fff;
+	font-size: .18rem;
+	font-weight: 600;
+	top: .43rem;
+	left: 2rem;
+}
+
+.vip sub {
+	font-size: .1rem;
+	position: relative;
+	bottom: .03rem;
+}
+
+.jiant {
+	position: absolute;
+	color: #fff;
+	font-size: .18rem;
+	font-weight: 600;
+	top: .43rem;
+	right: .1rem;
+}
+
+
+/****btnnav****/
+.btnnav {
+	background-color: rgb(21,197,177);
+	height: .5rem;
+	display: flex;
+	font-size: 0;
+}
+
+.btn {
+	flex: 1;
+	font-size: .15rem;
+	text-align: center;
+	line-height: .5rem;
+	background-color: rgba(0,0,0,.2);
+	color: rgb(221,255,255);
+	font-weight: 600;
+	border-right: .01rem solid #2DBFAA;
+}
+
+.btn i {
+	font-size: .18rem;
+	line-height: .5rem;
+	font-weight: 100;
+}
+
+/****oder****/
+.oder {
+	border-bottom: .01rem solid lightgray;
+	border-top: .01rem solid lightgray;
+	margin-top: .12rem;
+	font-size: 0;
+	background-color: #fff;
+	position: relative;
+}
+
+.myoder {
+	position: relative;
+	height: .5rem;
+}
+
+.odericon {
+	width: .25rem;	
+	height: .25rem;	
+	border-radius: 50%;
+	background-color: #FBAB56;
+	position: absolute;
+	left: .12rem;
+	color: grey;
+	top: .125rem;
+	text-align: center;
+}
+
+.oder i {
+	line-height: .25rem;
+	font-size: .16rem;
+	font-weight: normal;
+}
+
+.odertitle {
+	line-height: .5rem;
+	font-size: .16rem;
+	position: absolute;
+	left: .42rem;
+	color: #1f1f1f;
+	font-weight: 600;
+}
+
+.alloder {
+	line-height: .5rem;
+	font-size: .16rem;
+	position: absolute;
+	right: .25rem;
+	color: darkgrey;
+}
+
+.myoder span {
+	line-height: .5rem;
+	font-size: .16rem;
+	position: absolute;
+	right: .1rem;
+	color: darkgrey;
+}
+
+.quan {
+	height: .7rem;
+	background-color: #Fff;
+	display: flex;
+	font-size: 0;
+	border-top: 1px solid #D7D7D7;
+		/*position: relative;*/
+}
+
+.quan a {
+	flex: 1;
+	background-color: white;
+}
+
+.quan a:link,
+.quan a:visited,
+.quan a:hover,
+.quan a:active {
+	color: #8e8e8e;
+}
+
+.quan a div {
+	text-align: center;
+}
+
+.oder .quan i {
+	position: relative;
+	color: #959595;
+	font-size: .24rem;
+	line-height: .5rem;
+}
+
+.quan a div div {
+	position: relative;	
+	font-weight: 600;
+	font-size: .14rem;
+	line-height: .02rem;
+}
+
+.quan .daipingjia .xiaoyuan {
+	width: .12rem;
+	height: .12rem;
+	border-radius: 50%;
+	border: .01rem solid #B9605C;
+	text-align: center;
+	line-height: .12rem;
+	color: #d84c29;
+	font-size: .08rem;
+	position: absolute;
+	top: 0;
+	right: -.05rem;
+}
+
+.myitem {
+	height: .45rem;
+	position: relative;
+	background-color: #FFF;
+	font-size: .15rem;
+	display: block;
+	border-bottom: .01rem solid #D7D7D7;
+}
+.mywallet,
+.myfriend,
+.myjifen,
+.myhezuo,
+.mykehu,
+.mytuijian {
+	margin-top: .1rem;
+}
+
+.myitem .bgwrallper {
+	height: .3rem;
+	width: .3rem;
+	border-radius: 50%;
+	text-align: center;
+	line-height: .3rem;
+	position: absolute;
+	top: .07rem;
+	left: .1rem;
+}
+
+.myitem .bgc_lightblue {
+	background-color: #43D5EE;
+}
+
+.myitem .bgc_pink {
+	background-color: #FF8390;
+}
+
+.myitem .bgc_skyblue {
+	background-color: #7dc2fd;
+}
+
+.myitem .bgc_greyblue {
+	background-color: #9fabff;
+}
+
+.myitem .bgc_waterblue {
+	background-color: #D075C2;
+}
+
+.myitem .bgc_lightred {
+	background-color: #D87250;
+}
+
+.myitem .bgc_lightgreen {
+	background-color: #92d561;
+}
+
+.myitem .bgc_qingse {
+	background-color: #3CA7AC;
+}
+
+.myitem .bgc_lightyellow {
+	background-color: #AFAF2C;
+}
+
+.itemmargin {
+	margin-top: .1rem;
+}
+
+.myitem .spana {
+	position: absolute;
+	left: .5rem;
+	display: inline-block;
+	line-height: .45rem;
+	color: #4a4a4a;
+}
+
+.myitem .spanb {
+	right: .3rem;
+}
+
+.myitem .spanc {
+	right: .1rem;
+}
+
+.myitem .spanb,
+.myitem .spanc {
+	position: absolute;
+	display: inline-block;
+	line-height: .45rem;
+	color: darkgray;
+}
+
+.myitem .iconfont {
+	font-size: .21rem;
+}
+
+.myhezuo {
+	margin-bottom: .7rem;
+}
+
+.myitem .new {
+	color: #e34b1a;
+	font-size: .14rem;
+	font-weight: 600;
+}

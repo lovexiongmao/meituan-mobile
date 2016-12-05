@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="iconfont/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>	
+		<link rel="stylesheet" text="text/css" href="css/more.css" />
+		<script src="js/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="items">
+			<a class="myitems" id="more" href="javascript:;">
+				<span class="spana">更多</span>
+			</a>
+			<div class="konghezi"></div>
+			<a class="myitems choosemoshi" href="javascript:;">
+				<span class="spana">非wifi模式下使用省流量模式</span>
+				<div class="switch">
+					<input type="checkbox" id="control" class="control">
+					<label for="control" class="checkbox"></label>
+				</div>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">邀请好友使用美团</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">字号大小</span>
+				<span class="spanb">中号字(默认)</span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">清空缓存</span>
+				<span class="spanb"><span class="huancun">62K</span></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems saoyisao" href="javascript:;">
+				<span class="spana">扫一扫</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">问卷调查</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">支付帮助</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">检查更新</span>
+				<span class="spanb">新版发布,立即更新!</span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">关于美团</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">加入我们</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">诊断网络</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<a class="myitems" href="javascript:;">
+				<span class="spana">版权信息</span>
+				<span class="spanb"></span>
+				<span class="spanc">></span>
+			</a>
+			<div class="konghezia"></div>
+		</div>
+		
+		
+		<div class="bottomnavbar">
+			<ul class="navbar">
+				<a href="index.html"><li><i class="icon iconfont">&#xe61e;</i>首页</li></a>
+				<a href="business.html"><li><i class="icon iconfont">&#xe616;</i>商家</li></a>
+				<a href="my.html"><li><i class="icon iconfont">&#xe608;</i>我的</li></a>
+				<a href="javascript:;"><li><i class="icon iconfont">&#xe60c;</i>更多</li></a>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			$(".navbar a").eq(3).css("color","#06c1ae").siblings().css("color","grey");
+			$(".navbar i").eq(3).css("color","#06c1ae").siblings().css("color","grey");
+		</script>
+	</body>
+</html>
